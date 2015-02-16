@@ -1,6 +1,8 @@
 package entities;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 
 public class Entity implements Comparable<Entity>{
 	public float time;
@@ -28,6 +30,10 @@ public class Entity implements Comparable<Entity>{
 	public void update(float delta){
 		this.time += delta;
 	}
+	
+	public void render(SpriteBatch batch){
+		
+	}
 
 	@Override
 	public int compareTo(Entity otherEntity) {
@@ -38,6 +44,10 @@ public class Entity implements Comparable<Entity>{
 		return 0;
 	}
 	
-	
+	public Array<Entity> getEntities(){
+		Array<Entity> entitiesArray = new Array<Entity>();
+		entitiesArray.add(this);
+		return entitiesArray;
+	}
 	
 }
