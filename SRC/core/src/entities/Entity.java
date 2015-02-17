@@ -44,7 +44,6 @@ public class Entity implements Comparable<Entity>{
 		return 0;
 	}
 	
-	
 	public Array<Entity> getEntities(){
 		Array<Entity> entitiesArray = new Array<Entity>();
 		entitiesArray.add(this);
