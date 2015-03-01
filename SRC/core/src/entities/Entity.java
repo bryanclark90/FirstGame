@@ -6,7 +6,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class Entity implements Comparable<Entity>{
 	public float time;
-	public Vector2 postion;
+	public Vector2 position;
 	//TODO: add geometry to this or "InteractiveEntity"
 	protected float zIndex;
 	
@@ -19,7 +19,7 @@ public class Entity implements Comparable<Entity>{
 	}
 	
 	public Entity(Vector2 pos, float z){
-		this.postion = new Vector2(pos);
+		this.position = new Vector2(pos);
 		this.zIndex = z;
 	}
 	
