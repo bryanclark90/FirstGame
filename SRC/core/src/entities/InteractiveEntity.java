@@ -28,7 +28,7 @@ public class InteractiveEntity extends Entity{
 	}
 	
 	public void translate(Vector2 operator){
-		for(Fixture f: this.fixturesArray); //TODO:Make this work
+		for(Fixture f: this.fixturesArray) f.translate(operator);
 	}
 
 	@Override

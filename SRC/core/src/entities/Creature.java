@@ -3,8 +3,6 @@ package entities;
 import com.badlogic.gdx.math.Vector2;
 
 public class Creature extends InteractiveEntity{
-	
-	public void move(Vector2 movement){
-		//TODO: move the enTITTY
-	}
+    // does this work? probs not.fuck you bryan. //private final float MOVE_SPEED = 2.0f;
+
 }

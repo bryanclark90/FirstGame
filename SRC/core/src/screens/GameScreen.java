@@ -2,11 +2,15 @@ package screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
+import com.myFirstGame.game.Assets;
 import com.myFirstGame.game.FirstGame;
 
+import entities.Hero;
 import entities.InteractiveEntity;
 
 /*
@@ -15,22 +19,26 @@ import entities.InteractiveEntity;
 public class GameScreen extends FirstGameScreen {
 	SpriteBatch batch;
 	Texture img;
-	InteractiveEntity myBox;
+	Hero myBox;
+    ShapeRenderer shapeRenderer;
+    OrthographicCamera cam;
 	
 	public GameScreen(FirstGame g) {
 		super(g);
-		this.myBox = new InteractiveEntity(new Vector2(0,0),new Vector2(5,5),1);
+		this.myBox = new Hero();
+        this.myBox.addFixture(new Vector2(0,0),new Vector2(5,5),1);
+        Assets.loadTest();
 	}
 
 	@Override
 	public void show() {
 		batch = new SpriteBatch();
-		img = new Texture(Gdx.files.local("badlogic.jpg"));
+        shapeRenderer = new ShapeRenderer();
+        cam = new OrthographicCamera(16f,9f);
+        cam.position.set(0,0,0);
 	}
 	
 	private void update(float delta){
-		//foo controls for the box
-		Vector2 movement = new Vector2();
 		this.myBox.update(delta);
 	}
 	
@@ -38,9 +46,22 @@ public class GameScreen extends FirstGameScreen {
 	public void render(float delta) {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
+
+        // 1. Control everything
+        this.myBox.keyboardControl();
+
+        // 2. Update and apply changes
+        this.myBox.update(delta);
+
+        // 3. Move Camera
+        cam.update();
+        batch.setProjectionMatrix(cam.combined);
+
+        // 4. Render
+        myBox.debugRender(shapeRenderer);
+
+        // 5. Clean up or whatever
+
 	}
 	
 
