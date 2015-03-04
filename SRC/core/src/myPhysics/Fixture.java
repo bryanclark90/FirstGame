@@ -9,15 +9,12 @@ public class Fixture extends Entity{
 	public Rectangle rect;
 	public int id;
 	
-	public Fixture(Vector2 pos, Vector2 size, float z, int idNum) {
-		super(pos, z);
+	public Fixture(Vector2 center, Vector2 size, float z, int idNum) {
+		super(center, z);
 		this.id = idNum;
-		this.rect = new Rectangle(pos.x,pos.y, size.x, size.y);// TODO Auto-generated constructor stub
-	}
-	
-	public void setPosition(Vector2 pos){
-		this.rect.setPosition(pos);
-		this.postion.set(pos);
+		this.rect = new Rectangle();
+        this.rect.setSize(size.x,size.y);
+        this.rect.setPosition(center);
 	}
 	
 	public void setSize(float width, float height){
