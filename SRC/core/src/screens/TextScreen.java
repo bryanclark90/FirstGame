@@ -2,6 +2,7 @@ package screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,8 +11,6 @@ import com.myFirstGame.game.Assets;
 import com.myFirstGame.game.FirstGame;
 
 import java.util.Iterator;
-
-import javax.microedition.khronos.opengles.GL10;
 
 /**
  * Created by chris on 3/3/15.
@@ -70,7 +69,7 @@ public class TextScreen extends FirstGameScreen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) this.nextText();
         this.batch.setProjectionMatrix(cam.combined);
         batch.begin();

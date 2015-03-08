@@ -104,6 +104,7 @@ public class Creature extends InteractiveEntity{
         this.health -= dmg;
         if(this.health <= 0){
             this.setState(Status.DYING, this.getHeading());
+            Assets.soundsArray.get(10).play(Assets.effectsVol);
             //System.out.println(this.id + " Died :(");
         }
         else{

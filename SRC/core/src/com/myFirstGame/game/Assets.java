@@ -18,8 +18,8 @@ public class Assets {
     public static Array<Animation> animationArray;
 
     public static AssetManager am;
-    public static float effectsVol = 0.5f;
-    public static float musicVol = 0.5f;
+    public static float effectsVol = 0.9f;
+    public static float musicVol = 0.7f;
     public static Texture imgTexture;
     public static Sprite imgSprite;
 
@@ -78,6 +78,7 @@ public class Assets {
         Assets.soundsArray.add(Gdx.audio.newSound(Gdx.files.internal("LosingSong.wav")));
         Assets.soundsArray.add(Gdx.audio.newSound(Gdx.files.internal("WinningSong.wav")));
         Assets.soundsArray.add(Gdx.audio.newSound(Gdx.files.internal("BurgerTheme.wav"))); //9
+        Assets.soundsArray.add(Gdx.audio.newSound(Gdx.files.internal("DeathSound.wav")));
     }
 
 }
