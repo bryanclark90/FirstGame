@@ -26,6 +26,10 @@ public class InteractiveEntity extends Entity{
 		this.fixturesArray.add(
 				new Fixture(pos,size, z, this.fixturesArray.size));
 	}
+	
+	public void translate(Vector2 operator){
+		for(Fixture f: this.fixturesArray) f.translate(operator);
+	}
 
 	@Override
 	public Array<Entity> getEntities() {

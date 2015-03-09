@@ -23,5 +23,12 @@ public class Fixture extends Entity{
 	public void setSize(float width, float height){
 		this.rect.setSize(width, height);
 	}
+
+    public void translate(Vector2 operator){
+        Vector2 pos = new Vector2();
+        this.rect.getPosition(pos);
+        pos.add(operator);
+        this.rect.setPosition(pos);
+    }
 	
 }

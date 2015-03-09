@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
-public class Entity implements Comparable<Entity>{
+public class Entity implements Comparable<Entity> {
 	public float time;
 	public Vector2 position;
 	//TODO: add geometry to this or "InteractiveEntity"
