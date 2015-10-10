@@ -1,5 +1,5 @@
 #Pixels on a Screen (FIRSTGAME)
-
+Experiement with Java game programming
 
 ##Wat
 We, as in Chris and Bryan, are learning how to make a real-time simulation using LibGDX and Java.  
